@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="{{ url_for('css', path='main.css') }}" rel="stylesheet">
+        <script src="https://unpkg.com/htmx.org@2.0.10"></script>
+        <title>{{ name }}</title>
+    </head>
+    <body>
+        <form id="signin"
+            hx-post="/acc"
+            hx-trigger="submit"
+            hx-target="#signin"
+            hx-swap="innerHTML">
+            <fieldset>
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login">
+
+                <label for="passw">Password</label>
+                <input type="password" id="passw" name="passw">
+                <span class="material-symbols-outlined" onclick="visibility()">
+                    visibility
+                </span>
+
+                <button
+                >Submit</button>
+            </fieldset>
+            <script src="{{ url_for('js', path='visibility.js') }}"></script>
+        </form>
+    </body>
+</html>
